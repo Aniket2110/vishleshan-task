@@ -1,0 +1,45 @@
+<app-header></app-header>
+<div class="container-fluid">
+<h3 class="p-3 text-center mt-5">Employe List</h3>
+<div class="container">
+    <table class="table table-striped shadow">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.firstName}} {{user.lastName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.role}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<hr class="mt-5">
+<h3 class="p-3 text-center mt-3">Product List</h3>
+<div class="container shadow p-2 mb-5">
+   <div class="row" *ngFor="let product of products">
+    <div class="product-list p-5">
+        <div class="product-list-item">
+            <img src={{product.ImagePath}} class="product-list-item-img">           
+          <div class="product-list-item-text pl-5">
+            <h3 class="text-primary"><strong>{{product.productname}}</strong></h3>
+            <p class="mb-2">{{product.description}} <br><span class="prize-color">Prize: $ {{product.Prize}}</span></p> 
+           
+            <button type=button class="btn btn-primary"  (click)="clickMethod('name')">Share</button>
+          </div>
+        </div>
+        <!-- <button class="btn btn-primary mt-4">Share</button> -->
+        
+
+   </div>
+   <hr>
+</div>
+</div>
+<app-footer></app-footer>
+
+
